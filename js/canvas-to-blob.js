@@ -89,7 +89,9 @@
         define(function () {
             return dataURLtoBlob;
         });
+    } else if (typeof module !== 'undefined' && module.exports) {
+        module.exports = dataURLtoBlob;
     } else {
         window.dataURLtoBlob = dataURLtoBlob;
     }
-}(this));
+})(typeof window !== 'undefined' ? window : this);
